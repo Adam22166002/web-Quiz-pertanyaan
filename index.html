@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Web App - MySkill</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <!-- login form -->
+    <div class="login_form">
+      <div class="form">
+        <div class="title">Login</div>
+        <span class="inputs">
+          <span class="inputf">
+            <input
+              type="email"
+              class="input"
+              id="uEmail"
+              placeholder="Email"
+            />
+            <span class="label">Email</span>
+          </span>
+          <span class="inputf">
+            <input
+              type="password"
+              class="input"
+              id="uPass"
+              placeholder="Password"
+            />
+            <span class="label">Password</span>
+          </span>
+        </span>
+        <div class="hideBtn">
+          <button type="button" class="btn" onclick="loginForm()">Login</button>
+          <div class="text">
+            Don't have account ?
+            <a href="sign-up.html">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- info box quiz -->
+    <div class="info_box">
+      <div class="info-title"><span>Aturan-aturan dalam quiz ini</span></div>
+      <div class="info-list">
+        <div class="info">
+          <span>1.</span> Anda hanya memiliki 30 detik untuk setiap pertanyaan
+        </div>
+        <div class="info">
+          <span>2.</span> Anda tidak dapat memilih opsi apapun setelah waktu
+          habis.
+        </div>
+        <div class="info">
+          <span>3.</span> Setelah kuis dimulai, Anda tidak dapat meminimalkan
+          layar atau membuka halaman lain.
+        </div>
+        <div class="info">
+          <span>4.</span> Jika Anda melanggar <span>poin 3</span>, itu akan
+          dianggap melanggar aturan (diskualifikasi).
+        </div>
+        <div class="info">
+          <span>5.</span> Jika dua pelanggaran dihitung, Anda akan dikeluarkan.
+        </div>
+        <div class="info">
+          <span>6.</span> Anda tidak dapat keluar dari kuis selama Anda sedang
+          bermain.
+        </div>
+        <div class="info">
+          <span>7.</span> Anda akan mendapatkan poin berdasarkan jawaban yang
+          benar.
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="quit" onclick="quit()">Keluar Quiz</button>
+        <button class="restart" onclick="enterQuiz()">Selanjutnya</button>
+      </div>
+    </div>
+
+    <!-- start quiz button ke js-->
+    <div class="startBtn">
+      <button onclick="startQuiz()">Ayo Mulai Quiz</button>
+    </div>
+
+    <!-- Tampilkan quiz soal ke js-->
+    <div class="quiz_container">
+      <!-- header quiz ke js-->
+      <header>
+        <div class="quiz_title">
+          <p>Quiz</p>
+        </div>
+        <div class="count_down">
+          <p>Waktu Sisa</p>
+          <p id="timer">00</p>
+        </div>
+      </header>
+
+      <!-- main quiz content ke js-->
+      <main id="quizHidden">
+        <div id="qustionsContainer"></div>
+      </main>
+
+      <!-- button pertanyaan selanjutnya ke js-->
+      <footer>
+        <div class="footer_container">
+          <div class="qustion_Count">
+            <span id="qustionNo">1</span>
+            <p>dari</p>
+            <span>6</span>
+            <p>Pertanyaan</p>
+          </div>
+          <div class="next_Btn">
+            <button onclick="renderQuestions()">Selanjutnya</button>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- result box ke js-->
+    <div class="result_box">
+      <div class="complete_text">Kamu telah berhasil menyelesaikan Quiz</div>
+      <div class="circular-progress">
+        <span class="progress-value">0%</span>
+      </div>
+      <div class="score_text"></div>
+      <div class="buttons">
+        <button class="quit" onclick="quit()">Keluar</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
